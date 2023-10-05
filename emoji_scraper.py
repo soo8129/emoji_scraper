@@ -4,6 +4,7 @@ import logging
 import logging.handlers
 import requests
 import json
+import re
 
 filehandler = logging.handlers.TimedRotatingFileHandler(filename='emoji_logfile_', when='midnight', interval=1,
                                                         encoding='utf-8')
@@ -31,6 +32,7 @@ def _emoji_scraper():
         if req.status_code == 200:
             json_decoded = json.loads(req.text)
             if json_decoded:
-                emoji_insert(cursor, json_decoded)
+                # emoji_insert(cursor, json_decoded)
+                pass
     except Exception as e:
         logger.info(f'{e} error occur')
