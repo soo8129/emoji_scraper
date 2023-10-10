@@ -32,7 +32,7 @@ def _emoji_scraper():
         if req.status_code == 200:
             json_decoded = json.loads(req.text)
             if json_decoded:
-                # emoji_insert(cursor, json_decoded)
                 pass
+                # emoji_insert(cursor, json_decoded)
     except Exception as e:
         logger.info(f'{e} error occur')
